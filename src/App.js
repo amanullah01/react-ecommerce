@@ -15,11 +15,14 @@ const HatsPage = props => {
   );
 };
 
-const TopicsList = () => {
+const TopicsList = props => {
   return (
     <div>
       <Link to="/">Home</Link>
       <Link to="/topics/12">Topic Details</Link>
+      <button onClick={() => props.history.push("/topics/12")}>
+        Topics details via onclic button
+      </button>
       <h1>This is TopicsList page</h1>
     </div>
   );
