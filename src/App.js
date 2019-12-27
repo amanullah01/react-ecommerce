@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Link, Route } from "react-router-dom";
 import "./App.css";
 
 import HomePage from "./pages/homepage/hompage.component";
@@ -8,6 +8,8 @@ const HatsPage = props => {
   console.log(props);
   return (
     <div>
+      <Link to="/">Home</Link>
+      <Link to="/topics">Topic Lits</Link>
       <h1>This is Hats page</h1>
     </div>
   );
@@ -16,6 +18,8 @@ const HatsPage = props => {
 const TopicsList = () => {
   return (
     <div>
+      <Link to="/">Home</Link>
+      <Link to="/topics/12">Topic Details</Link>
       <h1>This is TopicsList page</h1>
     </div>
   );
@@ -24,6 +28,8 @@ const TopicDetail = props => {
   console.log(props);
   return (
     <div>
+      <Link to="/">Home</Link>
+      <Link to="/topics">Topic List</Link>
       <h1>This is details of # {props.match.params.topicId}</h1>
     </div>
   );
