@@ -20,6 +20,9 @@ const TopicsList = props => {
     <div>
       <Link to="/">Home</Link>
       <Link to="/topics/12">Topic Details</Link>
+      <Link to={`${props.match.url}/13`}>13 via match url</Link>
+      <Link to={`${props.match.url}/14`}>14 via match url</Link>
+      <Link to={`${props.match.url}/15`}>15 via match url</Link>
       <button onClick={() => props.history.push("/topics/12")}>
         Topics details via onclic button
       </button>
@@ -46,6 +49,8 @@ function App() {
         <Route exact path="/hats" component={HatsPage} />
         <Route exact path="/topics" component={TopicsList} />
         <Route path="/topics/:topicId" component={TopicDetail} />
+        <Route exact path="/blogs/topics" component={TopicsList} />
+        <Route path="/blogs/topics/:topicId" component={TopicDetail} />
       </Switch>
     </div>
   );
